@@ -62,4 +62,4 @@ The goal of this assignment is to build a fully functional end-to-end IoT system
    ```bash
    python client.py
    ```
-3. Ensure the database is configured and running with relevant IoT data.  
+3. Ensure the database is configured and running with relevant IoT data. 

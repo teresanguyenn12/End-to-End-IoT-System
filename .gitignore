@@ -1,0 +1,75 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+env/
+venv/
+ENV/
+.venv/
+
+# Editor and IDE specific files
+*.swp
+*.swo
+*.idea/
+.vscode/
+*.log
+*.sublime-workspace
+*.sublime-project
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+*.egg-info
+
+# Test and coverage reports
+coverage/
+*.cover
+.hypothesis/
+.pytest_cache/
+.tox/
+.nox/
+.jupyter/
+.mypy_cache/
+.pyre/
+
+# Environment and dependency files
+.env
+*.env
+*.env.*
+
+# Generated documentation
+*.rst
+build/
+docs/_build/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+
+# Specific files for client-server projects
+client.log
+server.log
+*.db  # If you're using SQLite or similar database
+*.sock  # Unix domain sockets
+*.pid   # Process ID files
+
+# Package manager
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Containers
+Dockerfile
+docker-compose.yml
+*.tar
+
+# Security and secrets
+secrets.json
+config.json
+credentials.txt

@@ -54,12 +54,27 @@ The goal of this assignment is to build a fully functional end-to-end IoT system
 ---
 
 ### Running the System  
-1. **Start the TCP Server:**  
+1. **Activate virtual environment**  
+  For macOS/Linux:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+   For Windows:
+   ```bash
+   python -m venv venv
+   venv/Scripts/activate
+   ```
+
+1. **Install Dependencies:**  
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. **Start the TCP Server:**  
    ```bash
    python server.py
    ```
-2. **Start the TCP Client:**  
+3. **Start the TCP Client:**  
    ```bash
    python client.py
    ```
-3. Ensure the database is configured and running with relevant IoT data. 

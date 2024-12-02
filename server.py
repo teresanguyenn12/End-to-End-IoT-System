@@ -2,9 +2,15 @@ import socket
 import threading
 from pprint import pprint
 import functions as func
+import os
+from dotenv import load_dotenv
 
-HOST = '127.0.0.1'
-PORT = 23456
+# Load environment variables from .env file
+load_dotenv()
+
+HOST = str(os.getenv('HOST'))
+PORT = int(os.getenv('PORT'))
+
 
 def handle_client(client_socket, client_address):
     print(f"Client connected: {client_address}")

@@ -1,10 +1,17 @@
 from pymongo import MongoClient
 import certifi
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+MONGO_CONNECTION_URI = os.getenv("MONGO_CONNECTION_URI")
 
 def get_db():
     # MongoDB connection URI
     try: 
-        uri = "mongodb+srv://dylanswanson01:Password123@cluster0.wnjbx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        uri = str(MONGO_CONNECTION_URI)
         client = MongoClient(uri, tlsCAFile=certifi.where())
         db = client['test']
         print("Connected to MongoDB")

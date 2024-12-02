@@ -5,9 +5,7 @@ __pycache__/
 *.pyd
 
 # Virtual environment
-env/
 venv/
-ENV/
 .venv/
 
 # Editor and IDE specific files
@@ -38,9 +36,6 @@ coverage/
 .pyre/
 
 # Environment and dependency files
-.env
-*.env
-*.env.*
 
 # Generated documentation
 *.rst

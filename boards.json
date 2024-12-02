@@ -1,0 +1,41 @@
+[
+	{
+		"id": 3247,
+		"asset_uid": "66w-9n7-2ax-pf3",
+		"virtual_device": 2267,
+		"reference_obj": 2330,
+		"availability": "private",
+		"created_at": "2024-12-01T05:41:04.858735Z",
+		"updated_at": "2024-12-01T05:41:04.858762Z",
+		"name": "Arduino Nano 33 IoT - 1",
+		"description": "A compact development board with Wi-Fi and Bluetooth connectivity, based on the SAMD21 Cortex-M0+ processor, ideal for IoT applications.",
+		"type": "Microcontroller",
+		"image": "https://django.dataniz.com/media/board_images/ef5b770c-e5bf-4bbd-adbd-a75cf3117f5d.png"
+	},
+	{
+		"id": 3248,
+		"asset_uid": "e9f76fc4-3b98-41b0-8d8d-045a818ed99e",
+		"virtual_device": 2723,
+		"reference_obj": 2330,
+		"availability": "private",
+		"created_at": "2024-12-01T06:05:22.579403Z",
+		"updated_at": "2024-12-01T06:05:22.579426Z",
+		"name": "board 1 09c26d95-2e68-4d65-8eda-0549ed957b80",
+		"description": "A compact development board with Wi-Fi and Bluetooth connectivity, based on the SAMD21 Cortex-M0+ processor, ideal for IoT applications.",
+		"type": "Microcontroller",
+		"image": "https://django.dataniz.com/media/board_images/ef5b770c-e5bf-4bbd-adbd-a75cf3117f5d.png"
+	},
+	{
+		"id": 2772,
+		"asset_uid": "11i-n9k-h76-t7r",
+		"virtual_device": 2268,
+		"reference_obj": 2338,
+		"availability": "private",
+		"created_at": "2024-11-14T00:52:21.218543Z",
+		"updated_at": "2024-11-14T00:52:21.218572Z",
+		"name": "Raspberry Pi 4 - Raspberry Pi 4 - Smart Dishwasher",
+		"description": "A versatile and powerful SBC with a quad-core ARM Cortex-A72 CPU, suitable for various applications, including IoT, robotics, and desktop computing.",
+		"type": "Single-Board Computer",
+		"image": "https://django.dataniz.com/media/board_images/b10fa62a-0c75-4ce7-a112-c785857928fc.png"
+	}
+]

@@ -22,3 +22,9 @@ def get_refrigerator_data() -> list:
     collection = get_collection("devices_virtual")
     data = collection.find() 
     return list(data)
+
+def get_avg_refrigerator_moisture():
+    print("Getting average refrigerator moisture...")
+    collection = get_collection("devices_virtual")
+    data = collection.aggregate([{"$group": {"_id": None, "avgMoisture": {"$avg": "$moisture"}}}])
+    return list(data)

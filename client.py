@@ -10,29 +10,34 @@ def echo_client():
 
     try:
         while True:
+            # Wait for query options from the server
             options = client_socket.recv(1024)
-            decoded_messgage = options.decode('utf-8')
-            print(decoded_messgage)
-            option = input("Select an option (type 'exit' to quit): ")
+            if not options:
+                print("Server disconnected.")
+                break
+
+            # Decode and print the query options
+            print(options.decode())
+
+            # Prompt the user for input
+            option = input("Select an option (type 'exit' to quit): ").strip()
+            client_socket.send(option.encode())  # Send input to server
+
             if option.lower() == 'exit':
                 print("Closing connection...")
                 break
 
-            # Send message to server
-            client_socket.send(option.encode())
-
-            # Receive and print the response from the server
+            # Wait for and display the server's response to the input
             response = client_socket.recv(1024)
-            print(f"Server response: {response.decode()}\n")
+            if not response:
+                print("Server disconnected.")
+                break
+            print(f"Response: {response.decode()}")
+            option = None
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
         client_socket.close()
-
-
-def displayData(data):
-    for d in data:
-        print(d)
 
 if __name__ == "__main__":
     echo_client()

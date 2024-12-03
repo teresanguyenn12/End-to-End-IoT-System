@@ -1,6 +1,7 @@
 [
 	{
 		"id": 3247,
+		"device_name": "Smart Refrigerator",
 		"asset_uid": "66w-9n7-2ax-pf3",
 		"virtual_device": 2267,
 		"reference_obj": 2330,
@@ -14,6 +15,7 @@
 	},
 	{
 		"id": 3248,
+		"device_name": "Smart Refrigerator - 2",
 		"asset_uid": "e9f76fc4-3b98-41b0-8d8d-045a818ed99e",
 		"virtual_device": 2723,
 		"reference_obj": 2330,
@@ -27,6 +29,7 @@
 	},
 	{
 		"id": 2772,
+		"device_name": "Smart Dishwasher",
 		"asset_uid": "11i-n9k-h76-t7r",
 		"virtual_device": 2268,
 		"reference_obj": 2338,

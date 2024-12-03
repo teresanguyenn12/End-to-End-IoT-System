@@ -24,14 +24,14 @@ def get_collection(collection_name):
     db = get_db()
     return db[collection_name]
 
-def get_refrigerator_data() -> list:
-    print("Getting refrigerator data...")
+def get_data(query=None) -> list:
+    '''
+        Get data from the devices_virtual collection in MongoDB
+        params: query (dict) - query to filter data
+    '''
+    if(query is None):
+        query = {}
     collection = get_collection("devices_virtual")
-    data = collection.find() 
-    return list(data)
-
-def get_avg_refrigerator_moisture():
-    print("Getting average refrigerator moisture...")
-    collection = get_collection("devices_virtual")
-    data = collection.aggregate([{"$group": {"_id": None, "avgMoisture": {"$avg": "$moisture"}}}])
+    print("Getting all data...")
+    data = collection.find(query)
     return list(data)

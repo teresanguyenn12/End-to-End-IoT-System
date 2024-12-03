@@ -66,15 +66,15 @@ The goal of this assignment is to build a fully functional end-to-end IoT system
    venv/Scripts/activate
    ```
 
-1. **Install Dependencies:**  
+2. **Install Dependencies:**  
    ```bash
    pip install -r requirements.txt
    ```
-2. **Start the TCP Server:**  
+3. **Start the TCP Server:**  
    ```bash
    python server.py
    ```
-3. **Start the TCP Client:**  
+4. **Start the TCP Client:**  
    ```bash
    python client.py
    ```

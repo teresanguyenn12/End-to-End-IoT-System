@@ -1,0 +1,44 @@
+[
+	{
+		"id": 2267,
+		"name": "Smart Refrigerator",
+		"asset_uid": "1",
+		"topic": "Broker to MongoDB",
+		"host": "54.151.96.241",
+		"port": 1883,
+		"username": "daswanson22@gmail.com",
+		"password": "****8810",
+		"generation_start": "2024-12-02T21:31:00Z",
+		"generation_end": null,
+		"generation_frequency": 2,
+		"generation_frequency_unit": 3
+	},
+	{
+		"id": 2268,
+		"name": "Smart Dishwasher",
+		"asset_uid": "2",
+		"topic": "Broker to MongoDB",
+		"host": "54.151.96.241",
+		"port": 1883,
+		"username": "daswanson22@gmail.com",
+		"password": "****8810",
+		"generation_start": "2024-12-02T21:31:00Z",
+		"generation_end": null,
+		"generation_frequency": 2,
+		"generation_frequency_unit": 3
+	},
+	{
+		"id": 2723,
+		"name": "Smart Refrigerator - 2",
+		"asset_uid": "3",
+		"topic": "Broker to MongoDB",
+		"host": "54.151.96.241",
+		"port": 1883,
+		"username": "daswanson22@gmail.com",
+		"password": "****8810",
+		"generation_start": "2024-12-02T21:31:00Z",
+		"generation_end": null,
+		"generation_frequency": 2,
+		"generation_frequency_unit": 3
+	}
+]

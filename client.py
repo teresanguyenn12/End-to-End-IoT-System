@@ -1,9 +1,13 @@
 import socket
 
-HOST = '127.0.0.1'
-PORT = 23456
+#HOST = '127.0.0.1'
+#PORT = 23456
 
 def echo_client():
+    # Prompt for server IP and port
+    HOST = input("Enter the server's IP address: ").strip()
+    PORT = int(input("Enter the server's port: ").strip())
+
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect((HOST, PORT))
     print(f"Connected to server at {HOST}:{PORT}")

@@ -69,6 +69,7 @@ The goal of this assignment is to build a fully functional end-to-end IoT system
 2. **Install Dependencies:**  
    ```bash
    pip install -r requirements.txt
+   pip install certifi
    ```
 3. **Start the TCP Server:**  
    ```bash

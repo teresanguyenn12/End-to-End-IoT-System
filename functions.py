@@ -10,26 +10,27 @@ def load_json_data(file_path):
     
 def compute_avg_moisture() -> str:
     '''
+        Question 1:
         Get average refrigerator moisture data within the past 3 hours
     '''
     data = mongo.get_data()
     current_time = datetime.now()
 
-    # Compute the time 3 hours ago
+    # Compute the time for 3 hours ago
     three_hours_ago = current_time - timedelta(hours=3)
 
     # Load device data from the boards.json file
-    device_data = load_json_data('boards.json')
+    board_data = load_json_data('boards.json')
 
     # Create a set of names from the device data
-    device_names = {device['name'] for device in device_data}
+    board_names = {device['name'] for device in board_data}
 
     # Filter data based on the current time and the past 3 hours
     moisture_values = []
     for entry in data:
         if entry['time'] >= three_hours_ago:
             board_name = entry['payload']['board_name']
-            if board_name in device_names:
+            if board_name in board_names:
                 moisture_key = next((key for key in entry['payload'] if 'Moisture' in key), None)
                 if moisture_key:
                     moisture_values.append(float(entry['payload'][moisture_key]))
@@ -42,6 +43,7 @@ def compute_avg_moisture() -> str:
 
 def compute_avg_water_consumption() -> str:
     '''
+        Question 2:
         Get average water consumption per cycle in the smart dishwasher
     '''
     dishwasher_id = None
@@ -60,10 +62,10 @@ def compute_avg_water_consumption() -> str:
     # Find dishwasher board based on device ID
     for board in boards:
         if board['virtual_device'] == dishwasher_id:
-            dishwasher_asset_id= board['asset_uid']
+            dishwasher_asset_id = board['asset_uid']
             print(f"Found Smart Dishwasher Board: {dishwasher_asset_id}")
             break
-    
+
     # Get all dishwasher data based on asset ID from mongo db
     data = mongo.get_data(query={'payload.asset_uid': dishwasher_asset_id})
 
@@ -81,11 +83,13 @@ def compute_avg_water_consumption() -> str:
 
 def compute_max_electricity_consumption() -> str:
     '''
-        Get the device that consumed the most electricity among two refrigerators and a dishwasher
+        Question 3:
+        Get the device that consumed the most electricity among two refrigerators and a dishwasher.
     '''
     # Load device data from the boards.json file
     board_data = load_json_data('boards.json')
     board_device_map = create_board_device_map(board_data)
+
     # Create a set of names from the device data
     # Get all data from the MongoDB
     data = mongo.get_data()
@@ -111,9 +115,9 @@ def compute_max_electricity_consumption() -> str:
     max_board, max_consumption = max(electricity_consumption, key=lambda x: x[1])
     
     # Find device_name in boards.json and set it to the device_name
-    max_device = board_device_map[max_board]
+    max_device_name = board_device_map[max_board]
     print("Returning data...\n")
-    return f"{max_device} consumed the most electricity with {max_consumption:.2f} kWh\n"
+    return f"{max_device_name} consumed the most electricity with {max_consumption:.2f} kWh\n"
 
 
 def create_board_device_map(data):

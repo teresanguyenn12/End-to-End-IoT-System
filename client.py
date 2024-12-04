@@ -1,48 +1,22 @@
 import socket
 
-#HOST = '127.0.0.1'
-#PORT = 23456
-
-def echo_client():
-    # Prompt for server IP and port
-    HOST = input("Enter the server's IP address: ").strip()
-    PORT = int(input("Enter the server's port: ").strip())
-
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((HOST, PORT))
-    print(f"Connected to server at {HOST}:{PORT}")
-
-    try:
+def start_client(host='127.0.0.1', port=65432):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
+        client_socket.connect((host, port))
+        print("Connected to the server.")
+        
         while True:
-            # Receive the query options from the server
-            options = client_socket.recv(1024)
-            if not options:
-                print("Server disconnected.")
+            data = client_socket.recv(1024).decode()
+            print(data)
+            if "Goodbye!" in data:
                 break
-
-            # Decode and print the query options
-            print(options.decode())
-
-            # Prompt the user for input
-            option = input("Select an option (type 'exit' to quit): ").strip()
-
-            # Send the selected option to the server
-            client_socket.send(option.encode())
-
-            if option.lower() == 'exit':
-                print("Closing connection...")
+            
+            user_input = input("Your choice: ").strip()
+            client_socket.sendall(user_input.encode())
+            if user_input.lower() == "exit":
                 break
-
-            # Receive the response from the server
-            response = client_socket.recv(1024)
-            if not response:
-                print("Server disconnected.")
-                break
-            print(f"\nResponse: {response.decode()}")
-    except Exception as e:
-        print(f"An error occurred: {e}")
-    finally:
-        client_socket.close()
 
 if __name__ == "__main__":
-    echo_client()
+    host = str(input("Enter the host IP address: "))
+    port = int(input("Enter the port number: "))
+    start_client(host, port)

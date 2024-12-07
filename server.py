@@ -16,7 +16,6 @@ def start_server(host='127.0.0.1', port=65432):
         conn, addr = server_socket.accept()
         print(f"Connected by {addr}, {conn}")
         with conn:
-            print(f"Connected by {addr}")
             while True:
                 conn.sendall(b"Select an option:\n1. What is the average moisture inside my kitchen fridge in the past three hours?\n2. What is the average water consumption per cycle in my smart dishwasher?\n3. Which device consumed more electricity among my three IoT devices (two refrigerators and a dishwasher)?\nType 'exit' to disconnect.\n")
                 option = conn.recv(1024).decode().strip()
@@ -24,7 +23,7 @@ def start_server(host='127.0.0.1', port=65432):
                 if not option:
                     break
                 print(option)
-
+                print("===============")
 
                 # MESSAGE to client
                 if option == "1":
@@ -39,11 +38,11 @@ def start_server(host='127.0.0.1', port=65432):
                 elif option.lower() == "exit":
                     print(f"Client {conn} requested to exit.")
                     break
-                
-                response = questions.get(option, "Invalid option. Please try again.\n\n")
-                conn.sendall(response.encode())
+                else:
+                    conn.sendall("Invalid option. Please select a valid option.\n")
+
 
 if __name__ == "__main__":
-    host = str(input("Enter the host IP address: "))
-    port = int(input("Enter the port number: "))
-    start_server(host, port)
+    # host = str(input("Enter the host IP address: "))
+    # port = int(input("Enter the port number: "))
+    start_server()

@@ -7,16 +7,17 @@ def start_client(host='127.0.0.1', port=65432):
         
         while True:
             data = client_socket.recv(1024).decode()
-            print(data)
+            
             if "Goodbye!" in data:
                 break
-            
+            print(data)
+            print("==========================")
             user_input = input("Your choice: ").strip()
             client_socket.sendall(user_input.encode())
             if user_input.lower() == "exit":
                 break
 
 if __name__ == "__main__":
-    host = str(input("Enter the host IP address: "))
-    port = int(input("Enter the port number: "))
-    start_client(host, port)
+    # host = str(input("Enter the host IP address: "))
+    # port = int(input("Enter the port number: "))
+    start_client()

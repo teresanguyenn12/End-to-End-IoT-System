@@ -27,13 +27,13 @@ def start_server(host='127.0.0.1', port=65432):
                 # Process client's choice
                 if option == "1":
                     result = func.compute_avg_moisture()
-                    conn.sendall(f"The average moisture in the past 3 hours is: {result}\n".encode())
+                    conn.sendall(f"{result}\n".encode())
                 elif option == "2":
                     result = func.compute_avg_water_consumption()
-                    conn.sendall(f"The average water consumption per cycle is: {result} gallons.\n".encode())
+                    conn.sendall(f"{result} gallons.\n".encode())
                 elif option == "3":
                     result = func.compute_max_electricity_consumption()
-                    conn.sendall(f"The device that consumed the most electricity is: {result}\n".encode())
+                    conn.sendall(f"{result}\n".encode())
                 elif option.lower() == "exit":
                     print(f"Client {conn} requested to exit.")
                     conn.sendall(b"Goodbye!\n")
@@ -43,6 +43,6 @@ def start_server(host='127.0.0.1', port=65432):
 
 
 if __name__ == "__main__":
-    # host = str(input("Enter the host IP address: "))
-    # port = int(input("Enter the port number: "))
+   # host = str(input("Enter the host IP address: "))
+   # port = int(input("Enter the port number: "))
     start_server()

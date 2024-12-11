@@ -43,6 +43,6 @@ def start_server(host='127.0.0.1', port=65432):
 
 
 if __name__ == "__main__":
-   # host = str(input("Enter the host IP address: "))
-   # port = int(input("Enter the port number: "))
-    start_server()
+    host = str(input("Enter the host IP address: "))
+    port = int(input("Enter the port number: "))
+    start_server(host, port)

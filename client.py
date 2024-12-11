@@ -23,7 +23,7 @@ def start_client(host='127.0.0.1', port=65432):
                 break
 
 if __name__ == "__main__":
-    # host = str(input("Enter the host IP address: "))
-    # port = int(input("Enter the port number: "))
-    # start_client(host, port)
-    start_client()
+    host = str(input("Enter the host IP address: "))
+    port = int(input("Enter the port number: "))
+    start_client(host, port)
+
